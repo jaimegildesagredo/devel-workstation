@@ -4,6 +4,7 @@
     "recipe[terminal::package]",
     "recipe[xinitrc::packages]",
     "recipe[i3::package]",
-    "recipe[i3status::package]"
+    "recipe[i3status::package]",
+    "recipe[chromium::package]"
   ]
 }

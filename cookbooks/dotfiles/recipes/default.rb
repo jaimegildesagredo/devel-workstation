@@ -17,6 +17,11 @@ git node[:dotfiles][:prefix] do
   revision node[:dotfiles][:version]
   enable_checkout false
   action :sync
+  notifies :run , "execute[setup-dotfiles]", :immediately
 end
 
-execute "cd #{node[:dotfiles][:prefix]} && ./setup.sh"
+execute "setup-dotfiles" do
+  command "./setup.sh"
+  cwd node[:dotfiles][:prefix]
+  action :nothing
+end

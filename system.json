@@ -2,6 +2,7 @@
   "run_list": [
     "recipe[the_silver_searcher]",
     "recipe[terminal::package]",
+    "recipe[xinitrc::packages]",
     "recipe[i3::package]"
   ]
 }

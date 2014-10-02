@@ -1,0 +1,3 @@
+default[:xinitrc][:packages] = [
+  'setxkbmap'
+]

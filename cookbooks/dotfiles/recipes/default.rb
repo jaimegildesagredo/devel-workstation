@@ -7,10 +7,6 @@
 # All rights reserved - Do Not Redistribute
 #
 
-directory node[:dotfiles][:prefix] do
-  recursive true
-  action :create
-end
 
 git node[:dotfiles][:prefix] do
   repository node[:dotfiles][:repository]

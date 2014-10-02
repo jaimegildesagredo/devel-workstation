@@ -1,3 +1,5 @@
 setxkbmap <%= node[:xinitrc][:config][:keyboard] %>
 
+xrdb -merge ~/.Xresources
+
 exec <%= node[:xinitrc][:config][:exec] %>

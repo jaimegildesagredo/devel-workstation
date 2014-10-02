@@ -4,6 +4,7 @@
     "recipe[xresources_solarized::config]",
     "recipe[terminal::config]",
     "recipe[xinitrc::config]",
-    "recipe[i3::config]"
+    "recipe[i3::config]",
+    "recipe[i3status::config]"
   ]
 }

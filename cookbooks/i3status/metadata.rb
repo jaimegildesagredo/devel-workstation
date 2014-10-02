@@ -1,0 +1,6 @@
+name             'i3status'
+maintainer       'Jaime Gil de Sagredo'
+maintainer_email 'jaimegildesagredo@gmail.com'
+license          'Apache 2.0'
+description      'Installs/Configures i3status'
+version          '0.1.0'

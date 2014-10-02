@@ -1,0 +1,72 @@
+# i3status configuration file.
+# see "man i3status" for documentation.
+
+# It is important that this file is edited as UTF-8.
+# The following line should contain a sharp s:
+# ß
+# If the above line is not correctly displayed, fix your editor first!
+
+general {
+        colors = true
+        interval = 5
+}
+
+disk "/" {
+        format = "%free"
+}
+
+order += "disk /"
+
+disk "/home" {
+       format = "%free"
+}
+
+order += "disk /home"
+
+<% node[:network][:interfaces].each do |name, interface| %>
+  <% interface_name = name.sub(/\:/, '') %>
+  <% interface_type = interface.fetch(:type, '') %>
+
+  <% if interface_type.start_with?('enp') %>
+ethernet <%= interface_name %> {
+    format_up = "<%= interface_name %>: %ip"
+    format_down = "<%= interface_name %>: down"
+}
+
+order += "ethernet <%= interface_name %>"
+
+  <% elsif interface_type.start_with?('wlp') %>
+wireless <%= interface_name %> {
+    format_up = "<%= interface_name %>: (%quality at %essid) %ip"
+    format_down = "<%= interface_name %>: down"
+}
+
+order += "wireless <%= interface_name %>"
+  <% end %>
+<% end %>
+
+battery 0 {
+        format = "%status %percentage %remaining (%consumption)"
+}
+
+order += "battery 0"
+
+load {
+        format = "%1min, %5min, %15min"
+}
+
+order += "load"
+
+volume master {
+        format = "%volume"
+        device = "default"
+        mixer = "Master"
+}
+
+order += "volume master"
+
+tztime local {
+        format = "%Y-%m-%d %H:%M:%S"
+}
+
+order += "tztime local"

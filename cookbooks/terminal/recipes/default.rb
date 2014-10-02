@@ -1,5 +1,5 @@
 #
-# Cookbook Name:: i3
+# Cookbook Name:: terminal
 # Recipe:: default
 #
 # Copyright 2014, Jaime Gil de Sagredo

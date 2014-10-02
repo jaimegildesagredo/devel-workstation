@@ -14,7 +14,8 @@ end
 
 git node[:dotfiles][:prefix] do
   repository node[:dotfiles][:repository]
-  revision node[:dotfiles][:version]
+  revision node[:dotfiles][:branch]
+  checkout_branch node[:dotfiles][:branch]
   action :sync
 end
 

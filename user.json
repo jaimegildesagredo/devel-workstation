@@ -1,6 +1,7 @@
 {
   "run_list": [
     "recipe[dotfiles]",
+    "recipe[xresources_solarized::config]",
     "recipe[terminal::config]",
     "recipe[xinitrc::config]",
     "recipe[i3::config]"

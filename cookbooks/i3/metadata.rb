@@ -1,0 +1,6 @@
+name             'i3'
+maintainer       'Jaime Gil de Sagredo'
+maintainer_email 'jaimegildesagredo@gmail.com'
+license          'All rights reserved'
+description      'Installs/Configures i3'
+version          '0.1.0'

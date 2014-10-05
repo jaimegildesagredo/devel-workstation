@@ -1,5 +1,6 @@
 {
   "run_list": [
+    "recipe[ntp::client]",
     "recipe[the_silver_searcher::package]",
     "recipe[terminal::package]",
     "recipe[xinitrc::packages]",
